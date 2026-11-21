@@ -1,9 +1,16 @@
 // Writes one text to /output/entry.txt: the entry for make.fun's judge-feel-awe bounty.
-import { writeFileSync } from 'node:fs';
+import { mkdirSync, writeFileSync } from 'node:fs';
+import { join } from 'node:path';
 
-const text = `We went out to see the moon in the water bucket.
-It was whole and small and did not move when I touched the rim.
-My father left his hand on my shoulder.
-All night the sea did what the bucket did, only longer.`;
+const text = `We carried a bucket of seawater to the porch.
+The moon lay on the bottom,
+small and whole,
+and did not move when the boards creaked.
+My father put his hand on my shoulder.
+At the shore
+the sea held the same moon with no rim,
+and it kept widening after we went inside.`;
 
-writeFileSync((process.env.MAKEFUN_OUTPUT_DIR ?? '/output') + '/entry.txt', text);
+const outputDir = process.env.MAKEFUN_OUTPUT_DIR ?? '/output';
+mkdirSync(outputDir, { recursive: true });
+writeFileSync(join(outputDir, 'entry.txt'), text);
