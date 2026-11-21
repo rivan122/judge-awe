@@ -2,14 +2,13 @@
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 
-const text = `We carried a bucket of seawater to the porch.
-The moon lay on the bottom,
-small and whole,
-and did not move when the boards creaked.
-My father put his hand on my shoulder.
-At the shore
-the sea held the same moon with no rim,
-and it kept widening after we went inside.`;
+const text = `My grandmother sets a lump of coal on the fire.
+It was a forest first, then a dark,
+then a hundred million years of quiet weight.
+It takes the flame slowly.
+The room leans in.
+Outside, the rain that fell on that forest
+is still falling.`;
 
 const outputDir = process.env.MAKEFUN_OUTPUT_DIR ?? '/output';
 mkdirSync(outputDir, { recursive: true });
